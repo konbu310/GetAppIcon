@@ -1,6 +1,6 @@
 # GetAppIcon
 
-Get app icons by PID on macOS. Returns a `base64` encoded data string which can be used for displaying or manipulating the resulting image.
+Get app icons by Application Path on macOS. Returns a `base64` encoded data string which can be used for displaying or manipulating the resulting image.
 
 ## Usage
 
@@ -12,11 +12,11 @@ $ swift build -c release
 $ .build/release/GetAppIcon --help
 Usage:
 
-    $ .build/release/GetAppIcon <pid>
+    $ .build/release/GetAppIcon <path>
 
 Arguments:
 
-    pid - PID of the app
+    appPath - Path of the app
 
 Options:
     --size [default: 32] - Size of the output icon
@@ -26,8 +26,8 @@ Options:
 ## Example
 
 ```bash
-$ .build/release/GetAppIcon 814 --size 512
+$ .build/release/GetAppIcon /Applications/Safari.app --size 512
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAA...
 
-$ .build/release/GetAppIcon 292 --size 512 --encoding buffer > icon.png
+$ .build/release/GetAppIcon /Applications/Safari.app --size 512 --encoding buffer > icon.png
 ```
